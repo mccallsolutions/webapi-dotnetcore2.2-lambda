@@ -1,0 +1,21 @@
+service:
+  name: WebAPI
+
+provider:
+  name: aws
+  runtime: dotnetcore2.2
+  region: eu-west-1
+  stage: dev
+  stackName: WebAPI-dev
+  profile: ms-dev-admin
+
+package:
+  artifact: bin/Release/netcoreapp2.2/deploy-package.zip
+
+functions:
+  api:
+    handler: WebAPI::WebAPI::LambdaEntryPoint::FunctionHandlerAsync
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
