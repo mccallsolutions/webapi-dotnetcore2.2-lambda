@@ -6,7 +6,7 @@ At the moment (July 2019) AWS only supports .NET core 2.1 so I had to use a cust
 
 There are 2 problems I'm facing:
 
-**`Problem One`**
+## Problem One
 
 Deploying with Serverless (`serverless.yml`) by setting the `runtime` to `dotnetcore2.2` fails due to:
 
@@ -18,7 +18,7 @@ An error occurred: ApiLambdaFunction - Value dotnetcore2.2 at 'runtime' failed t
 
 If I set the `runtime` to be `dotnetcore2.1` the stack deploys fine but then I face problem two.
 
-**`Problem Two`**
+## Problem Two
 
 Testing the deployed API in AWS the logs show this error:
 
